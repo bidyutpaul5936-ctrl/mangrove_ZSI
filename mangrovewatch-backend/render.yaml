@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: mangrovewatch-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: USE_MOCK_DATA
+        value: "true"
+      - key: ALLOWED_ORIGINS
+        value: "http://localhost:5173,https://mangrovewatch.vercel.app"
+      - key: OFFICER_SECRET_TOKEN
+        generateValue: true
+      - key: CARBON_EMISSION_FACTOR
+        value: "450.0"
+      - key: CARBON_PRICE_PER_TON
+        value: "15.0"

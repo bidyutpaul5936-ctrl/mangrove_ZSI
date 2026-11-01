@@ -1,0 +1,86 @@
+{
+  "type": "FeatureCollection",
+  "name": "sundarbans_protected_areas",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "pa_001",
+        "name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "designation": "National Park",
+        "iucn_cat": "II",
+        "country": "India",
+        "area_ha": 133010,
+        "status": "Designated",
+        "status_yr": 1984,
+        "gov_type": "Federal or national ministry or agency",
+        "source": "WDPA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[88.85, 21.82], [89.15, 21.82], [89.25, 21.78], [89.20, 21.62], [89.00, 21.55], [88.85, 21.60], [88.78, 21.68], [88.80, 21.75], [88.85, 21.82]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "pa_002",
+        "name": "Sundarbans Reserve Forest",
+        "wdpa_id": "903",
+        "designation": "Reserve Forest",
+        "iucn_cat": "IV",
+        "country": "Bangladesh",
+        "area_ha": 601700,
+        "status": "Designated",
+        "status_yr": 1875,
+        "gov_type": "Federal or national ministry or agency",
+        "source": "WDPA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.25, 21.78], [89.65, 21.72], [89.90, 21.60], [89.85, 21.45], [89.60, 21.40], [89.30, 21.42], [89.10, 21.50], [89.20, 21.62], [89.25, 21.78]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "pa_003",
+        "name": "Sundarbans Tiger Reserve",
+        "wdpa_id": "904",
+        "designation": "Tiger Reserve",
+        "iucn_cat": "IV",
+        "country": "India",
+        "area_ha": 258500,
+        "status": "Designated",
+        "status_yr": 1973,
+        "gov_type": "Federal or national ministry or agency",
+        "source": "WDPA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.30, 21.65], [89.50, 21.62], [89.55, 21.55], [89.50, 21.48], [89.35, 21.45], [89.25, 21.50], [89.22, 21.58], [89.30, 21.65]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "pa_004",
+        "name": "Sundarbans West Wildlife Sanctuary",
+        "wdpa_id": "905",
+        "designation": "Wildlife Sanctuary",
+        "iucn_cat": "IV",
+        "country": "Bangladesh",
+        "area_ha": 71502,
+        "status": "Designated",
+        "status_yr": 1996,
+        "gov_type": "Federal or national ministry or agency",
+        "source": "WDPA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.65, 21.72], [89.80, 21.68], [89.90, 21.60], [89.85, 21.55], [89.75, 21.52], [89.65, 21.55], [89.60, 21.62], [89.65, 21.72]]]
+      }
+    }
+  ]
+}

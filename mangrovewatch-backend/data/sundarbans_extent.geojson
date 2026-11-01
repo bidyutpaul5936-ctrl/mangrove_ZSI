@@ -1,0 +1,48 @@
+{
+  "type": "FeatureCollection",
+  "name": "sundarbans_mangrove_extent",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "extent_001",
+        "name": "Sundarbans Core Mangrove Zone",
+        "area_ha": 42500,
+        "source": "Global Mangrove Watch 2020",
+        "last_updated": "2020-01-01"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[88.85, 21.82], [89.08, 21.82], [89.25, 21.78], [89.45, 21.75], [89.65, 21.72], [89.80, 21.68], [89.90, 21.60], [89.85, 21.55], [89.75, 21.50], [89.60, 21.48], [89.40, 21.50], [89.20, 21.52], [89.00, 21.55], [88.85, 21.60], [88.78, 21.68], [88.80, 21.75], [88.85, 21.82]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "extent_002",
+        "name": "Sundarbans East Buffer",
+        "area_ha": 18200,
+        "source": "Global Mangrove Watch 2020",
+        "last_updated": "2020-01-01"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.90, 21.68], [90.05, 21.65], [90.15, 21.60], [90.20, 21.55], [90.15, 21.48], [90.00, 21.45], [89.85, 21.48], [89.75, 21.50], [89.85, 21.55], [89.90, 21.60], [89.90, 21.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "extent_003",
+        "name": "Sundarbans West Fringe",
+        "area_ha": 12300,
+        "source": "Global Mangrove Watch 2020",
+        "last_updated": "2020-01-01"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[88.55, 21.75], [88.70, 21.80], [88.85, 21.82], [88.80, 21.75], [88.78, 21.68], [88.70, 21.62], [88.58, 21.60], [88.50, 21.65], [88.48, 21.70], [88.55, 21.75]]]
+      }
+    }
+  ]
+}

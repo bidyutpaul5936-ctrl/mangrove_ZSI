@@ -1,0 +1,556 @@
+{
+  "type": "FeatureCollection",
+  "name": "sundarbans_loss_patches",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2016-001",
+        "detection_date": "2016-03-15",
+        "area_ha": 12.5,
+        "cause": "pond_conversion",
+        "confidence": 0.92,
+        "severity": "high",
+        "ndvi_before": 0.72,
+        "ndvi_after": 0.15,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "status": "confirmed",
+        "carbon_loss_tco2": 5625.0,
+        "year": 2016,
+        "shape_index": 1.8,
+        "notes": "Rectangular clearing pattern consistent with aquaculture pond conversion"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.12, 21.72], [89.14, 21.72], [89.14, 21.70], [89.12, 21.70], [89.12, 21.72]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2016-002",
+        "detection_date": "2016-06-20",
+        "area_ha": 3.2,
+        "cause": "erosion_cyclone",
+        "confidence": 0.78,
+        "severity": "medium",
+        "ndvi_before": 0.68,
+        "ndvi_after": 0.22,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Reserve Forest",
+        "wdpa_id": "903",
+        "status": "confirmed",
+        "carbon_loss_tco2": 1440.0,
+        "year": 2016,
+        "shape_index": 3.2,
+        "notes": "Irregular erosion pattern along river bank"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.55, 21.62], [89.57, 21.63], [89.58, 21.61], [89.56, 21.60], [89.54, 21.61], [89.55, 21.62]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2017-001",
+        "detection_date": "2017-02-10",
+        "area_ha": 28.7,
+        "cause": "clearing",
+        "confidence": 0.95,
+        "severity": "critical",
+        "ndvi_before": 0.75,
+        "ndvi_after": 0.08,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "status": "confirmed",
+        "carbon_loss_tco2": 12915.0,
+        "year": 2017,
+        "shape_index": 1.5,
+        "notes": "Large-scale clearing detected, likely illegal timber harvesting"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.20, 21.68], [89.24, 21.69], [89.26, 21.67], [89.25, 21.65], [89.22, 21.64], [89.19, 21.65], [89.18, 21.67], [89.20, 21.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2017-002",
+        "detection_date": "2017-09-05",
+        "area_ha": 5.1,
+        "cause": "pond_conversion",
+        "confidence": 0.88,
+        "severity": "high",
+        "ndvi_before": 0.70,
+        "ndvi_after": 0.12,
+        "in_protected_area": false,
+        "protected_area_name": null,
+        "wdpa_id": null,
+        "status": "confirmed",
+        "carbon_loss_tco2": 2295.0,
+        "year": 2017,
+        "shape_index": 1.3,
+        "notes": "Small rectangular pond construction at forest edge"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[88.92, 21.74], [88.94, 21.74], [88.94, 21.73], [88.92, 21.73], [88.92, 21.74]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2018-001",
+        "detection_date": "2018-04-22",
+        "area_ha": 8.9,
+        "cause": "clearing",
+        "confidence": 0.91,
+        "severity": "high",
+        "ndvi_before": 0.71,
+        "ndvi_after": 0.18,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Tiger Reserve",
+        "wdpa_id": "904",
+        "status": "confirmed",
+        "carbon_loss_tco2": 4005.0,
+        "year": 2018,
+        "shape_index": 2.1,
+        "notes": "Clearing in tiger reserve buffer zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.42, 21.58], [89.44, 21.59], [89.46, 21.58], [89.45, 21.56], [89.42, 21.56], [89.42, 21.58]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2018-002",
+        "detection_date": "2018-11-15",
+        "area_ha": 45.3,
+        "cause": "erosion_cyclone",
+        "confidence": 0.96,
+        "severity": "critical",
+        "ndvi_before": 0.74,
+        "ndvi_after": 0.05,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Reserve Forest",
+        "wdpa_id": "903",
+        "status": "confirmed",
+        "carbon_loss_tco2": 20385.0,
+        "year": 2018,
+        "shape_index": 4.5,
+        "notes": "Cyclone Titli impact - massive coastal erosion and tree fall"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.70, 21.52], [89.75, 21.54], [89.80, 21.53], [89.82, 21.50], [89.78, 21.48], [89.72, 21.47], [89.68, 21.49], [89.70, 21.52]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2019-001",
+        "detection_date": "2019-05-30",
+        "area_ha": 15.6,
+        "cause": "pond_conversion",
+        "confidence": 0.93,
+        "severity": "high",
+        "ndvi_before": 0.69,
+        "ndvi_after": 0.10,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "status": "confirmed",
+        "carbon_loss_tco2": 7020.0,
+        "year": 2019,
+        "shape_index": 1.2,
+        "notes": "Multiple small rectangular ponds carved into mangrove"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.05, 21.66], [89.09, 21.66], [89.09, 21.64], [89.05, 21.64], [89.05, 21.66]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2019-002",
+        "detection_date": "2019-11-10",
+        "area_ha": 62.0,
+        "cause": "erosion_cyclone",
+        "confidence": 0.97,
+        "severity": "critical",
+        "ndvi_before": 0.76,
+        "ndvi_after": 0.03,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Reserve Forest",
+        "wdpa_id": "903",
+        "status": "confirmed",
+        "carbon_loss_tco2": 27900.0,
+        "year": 2019,
+        "shape_index": 5.1,
+        "notes": "Cyclone Bulbul devastation - extensive damage along southern coast"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.30, 21.50], [89.38, 21.53], [89.45, 21.52], [89.48, 21.48], [89.44, 21.45], [89.35, 21.44], [89.28, 21.46], [89.30, 21.50]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2020-001",
+        "detection_date": "2020-05-25",
+        "area_ha": 98.5,
+        "cause": "erosion_cyclone",
+        "confidence": 0.99,
+        "severity": "critical",
+        "ndvi_before": 0.78,
+        "ndvi_after": 0.02,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Reserve Forest",
+        "wdpa_id": "903",
+        "status": "confirmed",
+        "carbon_loss_tco2": 44325.0,
+        "year": 2020,
+        "shape_index": 6.2,
+        "notes": "Super Cyclone Amphan - catastrophic damage, largest single loss event"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.50, 21.55], [89.60, 21.58], [89.70, 21.56], [89.75, 21.52], [89.70, 21.48], [89.58, 21.45], [89.48, 21.48], [89.45, 21.52], [89.50, 21.55]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2020-002",
+        "detection_date": "2020-08-12",
+        "area_ha": 7.3,
+        "cause": "clearing",
+        "confidence": 0.85,
+        "severity": "high",
+        "ndvi_before": 0.67,
+        "ndvi_after": 0.20,
+        "in_protected_area": false,
+        "protected_area_name": null,
+        "wdpa_id": null,
+        "status": "confirmed",
+        "carbon_loss_tco2": 3285.0,
+        "year": 2020,
+        "shape_index": 2.0,
+        "notes": "Post-cyclone opportunistic clearing near settlement"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[88.88, 21.70], [88.90, 21.71], [88.92, 21.70], [88.91, 21.68], [88.88, 21.68], [88.88, 21.70]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2021-001",
+        "detection_date": "2021-03-18",
+        "area_ha": 6.8,
+        "cause": "pond_conversion",
+        "confidence": 0.90,
+        "severity": "high",
+        "ndvi_before": 0.71,
+        "ndvi_after": 0.14,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "status": "confirmed",
+        "carbon_loss_tco2": 3060.0,
+        "year": 2021,
+        "shape_index": 1.4,
+        "notes": "Shrimp pond expansion into protected mangrove"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.15, 21.70], [89.17, 21.70], [89.17, 21.69], [89.15, 21.69], [89.15, 21.70]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2021-002",
+        "detection_date": "2021-12-05",
+        "area_ha": 22.1,
+        "cause": "erosion_cyclone",
+        "confidence": 0.94,
+        "severity": "critical",
+        "ndvi_before": 0.73,
+        "ndvi_after": 0.08,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Reserve Forest",
+        "wdpa_id": "903",
+        "status": "confirmed",
+        "carbon_loss_tco2": 9945.0,
+        "year": 2021,
+        "shape_index": 3.8,
+        "notes": "Cyclone Jawad coastal erosion"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.62, 21.50], [89.67, 21.52], [89.72, 21.50], [89.70, 21.47], [89.64, 21.46], [89.62, 21.50]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2022-001",
+        "detection_date": "2022-04-10",
+        "area_ha": 9.4,
+        "cause": "clearing",
+        "confidence": 0.87,
+        "severity": "high",
+        "ndvi_before": 0.70,
+        "ndvi_after": 0.16,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Tiger Reserve",
+        "wdpa_id": "904",
+        "status": "confirmed",
+        "carbon_loss_tco2": 4230.0,
+        "year": 2022,
+        "shape_index": 2.3,
+        "notes": "Illegal timber extraction detected via patrol reports"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.35, 21.60], [89.38, 21.61], [89.40, 21.59], [89.38, 21.57], [89.35, 21.58], [89.35, 21.60]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2022-002",
+        "detection_date": "2022-07-20",
+        "area_ha": 4.2,
+        "cause": "pond_conversion",
+        "confidence": 0.89,
+        "severity": "medium",
+        "ndvi_before": 0.66,
+        "ndvi_after": 0.13,
+        "in_protected_area": false,
+        "protected_area_name": null,
+        "wdpa_id": null,
+        "status": "confirmed",
+        "carbon_loss_tco2": 1890.0,
+        "year": 2022,
+        "shape_index": 1.1,
+        "notes": "Small fish pond at forest periphery"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[88.95, 21.72], [88.97, 21.72], [88.97, 21.71], [88.95, 21.71], [88.95, 21.72]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2023-001",
+        "detection_date": "2023-02-28",
+        "area_ha": 11.2,
+        "cause": "clearing",
+        "confidence": 0.92,
+        "severity": "high",
+        "ndvi_before": 0.72,
+        "ndvi_after": 0.11,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "status": "confirmed",
+        "carbon_loss_tco2": 5040.0,
+        "year": 2023,
+        "shape_index": 1.9,
+        "notes": "Settlement encroachment with clearing for agriculture"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.08, 21.68], [89.11, 21.69], [89.13, 21.67], [89.11, 21.65], [89.08, 21.66], [89.08, 21.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2023-002",
+        "detection_date": "2023-06-15",
+        "area_ha": 18.9,
+        "cause": "erosion_cyclone",
+        "confidence": 0.91,
+        "severity": "critical",
+        "ndvi_before": 0.74,
+        "ndvi_after": 0.06,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Reserve Forest",
+        "wdpa_id": "903",
+        "status": "confirmed",
+        "carbon_loss_tco2": 8505.0,
+        "year": 2023,
+        "shape_index": 4.0,
+        "notes": "Cyclone Mocha peripheral damage and storm surge erosion"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.55, 21.48], [89.60, 21.50], [89.65, 21.49], [89.63, 21.45], [89.57, 21.44], [89.55, 21.48]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2024-001",
+        "detection_date": "2024-01-20",
+        "area_ha": 14.7,
+        "cause": "pond_conversion",
+        "confidence": 0.94,
+        "severity": "critical",
+        "ndvi_before": 0.73,
+        "ndvi_after": 0.09,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "status": "open",
+        "carbon_loss_tco2": 6615.0,
+        "year": 2024,
+        "shape_index": 1.2,
+        "notes": "Large-scale aquaculture conversion, active enforcement needed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.18, 21.72], [89.22, 21.72], [89.22, 21.70], [89.18, 21.70], [89.18, 21.72]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2024-002",
+        "detection_date": "2024-04-05",
+        "area_ha": 3.8,
+        "cause": "clearing",
+        "confidence": 0.82,
+        "severity": "medium",
+        "ndvi_before": 0.65,
+        "ndvi_after": 0.25,
+        "in_protected_area": false,
+        "protected_area_name": null,
+        "wdpa_id": null,
+        "status": "open",
+        "carbon_loss_tco2": 1710.0,
+        "year": 2024,
+        "shape_index": 2.5,
+        "notes": "Small clearing near village, possibly firewood collection"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[88.85, 21.68], [88.87, 21.69], [88.89, 21.68], [88.88, 21.66], [88.85, 21.66], [88.85, 21.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2025-001",
+        "detection_date": "2025-02-14",
+        "area_ha": 21.3,
+        "cause": "clearing",
+        "confidence": 0.96,
+        "severity": "critical",
+        "ndvi_before": 0.76,
+        "ndvi_after": 0.07,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Tiger Reserve",
+        "wdpa_id": "904",
+        "status": "open",
+        "carbon_loss_tco2": 9585.0,
+        "year": 2025,
+        "shape_index": 1.7,
+        "notes": "Major illegal clearing in tiger reserve, urgent enforcement required"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.40, 21.56], [89.44, 21.57], [89.47, 21.55], [89.45, 21.52], [89.41, 21.52], [89.39, 21.54], [89.40, 21.56]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2025-002",
+        "detection_date": "2025-06-30",
+        "area_ha": 8.6,
+        "cause": "pond_conversion",
+        "confidence": 0.91,
+        "severity": "high",
+        "ndvi_before": 0.70,
+        "ndvi_after": 0.11,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "status": "open",
+        "carbon_loss_tco2": 3870.0,
+        "year": 2025,
+        "shape_index": 1.3,
+        "notes": "New aquaculture encroachment detected"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.02, 21.64], [89.05, 21.64], [89.05, 21.62], [89.02, 21.62], [89.02, 21.64]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2026-001",
+        "detection_date": "2026-03-10",
+        "area_ha": 16.4,
+        "cause": "clearing",
+        "confidence": 0.93,
+        "severity": "critical",
+        "ndvi_before": 0.74,
+        "ndvi_after": 0.09,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans Reserve Forest",
+        "wdpa_id": "903",
+        "status": "open",
+        "carbon_loss_tco2": 7380.0,
+        "year": 2026,
+        "shape_index": 2.0,
+        "notes": "Recent large clearing, investigation pending"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.25, 21.55], [89.29, 21.56], [89.32, 21.54], [89.30, 21.51], [89.26, 21.51], [89.25, 21.55]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "patch_id": "LOSS-2026-002",
+        "detection_date": "2026-08-22",
+        "area_ha": 5.9,
+        "cause": "pond_conversion",
+        "confidence": 0.88,
+        "severity": "high",
+        "ndvi_before": 0.68,
+        "ndvi_after": 0.13,
+        "in_protected_area": true,
+        "protected_area_name": "Sundarbans National Park",
+        "wdpa_id": "902",
+        "status": "open",
+        "carbon_loss_tco2": 2655.0,
+        "year": 2026,
+        "shape_index": 1.1,
+        "notes": "Latest detection - aquaculture pond construction in progress"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[89.10, 21.62], [89.12, 21.62], [89.12, 21.61], [89.10, 21.61], [89.10, 21.62]]]
+      }
+    }
+  ]
+}

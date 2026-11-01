@@ -1,0 +1,37 @@
+[
+  {
+    "patch_id": "LOSS-2016-001",
+    "citizen_report_id": null,
+    "label": "pond_conversion",
+    "verified_by": "officer",
+    "timestamp": "2016-05-20T10:00:00Z"
+  },
+  {
+    "patch_id": "LOSS-2017-001",
+    "citizen_report_id": null,
+    "label": "clearing",
+    "verified_by": "officer",
+    "timestamp": "2017-04-15T12:00:00Z"
+  },
+  {
+    "patch_id": "LOSS-2019-002",
+    "citizen_report_id": null,
+    "label": "erosion_cyclone",
+    "verified_by": "officer",
+    "timestamp": "2019-12-10T08:00:00Z"
+  },
+  {
+    "patch_id": "LOSS-2024-001",
+    "citizen_report_id": "CR-001",
+    "label": "pond_conversion",
+    "verified_by": "citizen+satellite",
+    "timestamp": "2024-07-01T09:00:00Z"
+  },
+  {
+    "patch_id": "LOSS-2025-001",
+    "citizen_report_id": "CR-002",
+    "label": "clearing",
+    "verified_by": "citizen+satellite",
+    "timestamp": "2025-03-15T14:00:00Z"
+  }
+]

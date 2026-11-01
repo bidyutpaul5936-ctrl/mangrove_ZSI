@@ -1,0 +1,12 @@
+{
+  "name": "mangrovewatch-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MangroveWatch root workspace launcher",
+  "scripts": {
+    "dev": "npm --prefix mangrovewatch-frontend run dev",
+    "build": "npm --prefix mangrovewatch-frontend run build",
+    "dev:backend": "python -m uvicorn main:app --app-dir mangrovewatch-backend --reload --host 127.0.0.1 --port 8000",
+    "start": "npm --prefix mangrovewatch-frontend run dev"
+  }
+}
