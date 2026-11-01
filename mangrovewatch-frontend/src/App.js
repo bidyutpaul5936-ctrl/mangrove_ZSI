@@ -5,6 +5,7 @@ import DashboardView from './components/DashboardView';
 import SatelliteView from './components/SatelliteView';
 import LegalDossiersView from './components/LegalDossiersView';
 import CommunityReportsView from './components/CommunityReportsView';
+import UnetCycloneStudio from './components/UnetCycloneStudio';
 import DossierModal from './components/DossierModal';
 import LoginModal from './components/LoginModal';
 
@@ -154,6 +155,7 @@ function AppContent() {
         {activeTab === 'dashboard' && (
           <DashboardView
             onNavigateToSatellite={() => setActiveTab('satellite')}
+            onNavigateToUnet={() => setActiveTab('unet')}
             onNavigateToLegal={() => setActiveTab('legal')}
             onNavigateToCommunity={() => setActiveTab('community')}
             onSelectDossier={handleOpenDossier}
@@ -161,7 +163,14 @@ function AppContent() {
         )}
 
         {activeTab === 'satellite' && (
-          <SatelliteView onSelectDossier={handleOpenDossier} />
+          <SatelliteView
+            onSelectDossier={handleOpenDossier}
+            onNavigateToUnet={() => setActiveTab('unet')}
+          />
+        )}
+
+        {activeTab === 'unet' && (
+          <UnetCycloneStudio onSelectDossier={handleOpenDossier} />
         )}
 
         {activeTab === 'legal' && (

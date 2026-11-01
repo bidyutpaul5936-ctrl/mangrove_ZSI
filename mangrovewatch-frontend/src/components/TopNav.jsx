@@ -11,7 +11,8 @@ import {
   Sun,
   Moon,
   Menu,
-  X
+  X,
+  BrainCircuit
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 
@@ -31,6 +32,12 @@ export default function TopNav({ activeTab, setActiveTab, onRequestLogin, darkMo
       label: 'Satellite Analysis',
       icon: Satellite,
       badge: null,
+    },
+    {
+      id: 'unet',
+      label: 'U-Net ML & Cyclone Shield',
+      icon: BrainCircuit,
+      badge: 'AI ML',
     },
     {
       id: 'legal',

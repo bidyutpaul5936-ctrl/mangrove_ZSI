@@ -15,13 +15,14 @@ import {
   Compass,
   Eye,
   Maximize2,
-  CheckCircle2
+  CheckCircle2,
+  BrainCircuit
 } from 'lucide-react';
 import MapView from './MapView';
 import { LOSS_PATCHES_GEOJSON } from '../data/mockData';
 import { downloadEvidencePDF } from '../api';
 
-export default function SatelliteView({ onSelectDossier }) {
+export default function SatelliteView({ onSelectDossier, onNavigateToUnet }) {
   const [selectedBand, setSelectedBand] = useState('rgb'); // 'rgb', 'nir', 'ndvi'
   const [selectedYear, setSelectedYear] = useState(2026);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -127,6 +128,17 @@ export default function SatelliteView({ onSelectDossier }) {
               GIS Carto Light
             </button>
           </div>
+          {onNavigateToUnet && (
+            <button
+              type="button"
+              className="btn btn-primary unet-quick-btn"
+              onClick={onNavigateToUnet}
+              title="Launch U-Net Deep Learning & Cyclone Bio-Shield Studio"
+            >
+              <BrainCircuit size={15} />
+              <span>Launch U-Net ML Studio</span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -287,6 +299,16 @@ export default function SatelliteView({ onSelectDossier }) {
 
           {/* Action Buttons */}
           <div className="inspector-actions">
+            {onNavigateToUnet && (
+              <button
+                type="button"
+                className="btn btn-outline btn-full unet-inspect-btn"
+                onClick={onNavigateToUnet}
+              >
+                <BrainCircuit size={15} />
+                <span>Run U-Net ML &amp; Cyclone Shield</span>
+              </button>
+            )}
             <button
               type="button"
               className="btn btn-primary btn-full"

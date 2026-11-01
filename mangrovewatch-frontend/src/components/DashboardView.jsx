@@ -16,13 +16,16 @@ import {
   Clock,
   MapPin,
   ChevronRight,
-  Eye
+  Eye,
+  BrainCircuit,
+  Waves
 } from 'lucide-react';
 import MapView from './MapView';
 import { getDashboardStats, getAlerts, acknowledgeAlert, downloadEvidencePDF } from '../api';
 
 export default function DashboardView({
   onNavigateToSatellite,
+  onNavigateToUnet,
   onNavigateToLegal,
   onNavigateToCommunity,
   onSelectDossier
@@ -177,6 +180,33 @@ export default function DashboardView({
           </div>
         </div>
       </section>
+
+      {/* ── ✨ U-Net Deep Learning & Cyclone Bio-Shield Launcher Banner ── */}
+      {onNavigateToUnet && (
+        <section className="unet-feature-callout-banner">
+          <div className="banner-content-left">
+            <div className="banner-pill">
+              <BrainCircuit size={14} className="pulse-icon" />
+              <span>AI ML DEEP LEARNING MODEL</span>
+            </div>
+            <h3>U-Net Satellite Image Analysis &amp; Cyclone Bio-Shield Simulator</h3>
+            <p>
+              Perform pixel-level multi-spectral canopy loss segmentation (Sentinel-2 10m) and simulate how much storm surge wave force an intact mangrove forest prevents during tropical cyclones.
+            </p>
+          </div>
+          <div className="banner-content-right">
+            <button
+              type="button"
+              className="btn btn-primary btn-lg banner-launch-btn"
+              onClick={onNavigateToUnet}
+            >
+              <Waves size={16} />
+              <span>Launch U-Net &amp; Cyclone Simulator</span>
+              <ArrowUpRight size={16} />
+            </button>
+          </div>
+        </section>
+      )}
 
       {/* ── 2. Responsive Split Grid: Map Telemetry + Enforcement Alerts ── */}
       <div className="dashboard-split-layout">
