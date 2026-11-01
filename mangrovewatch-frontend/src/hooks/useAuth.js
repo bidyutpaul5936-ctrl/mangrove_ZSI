@@ -6,6 +6,7 @@ const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(() => localStorage.getItem('officer_token') || '');
   const [isOfficer, setIsOfficer] = useState(false);
+  const [officerName, setOfficerName] = useState(() => localStorage.getItem('officer_name') || '');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -40,18 +41,24 @@ export function AuthProvider({ children }) {
     try {
       const res = await apiLogin(inputToken);
       if (res && res.token) {
+        const name = res.name || res.officer_name || 'Forest Officer';
         localStorage.setItem('officer_token', res.token);
+        localStorage.setItem('officer_name', name);
         setToken(res.token);
         setIsOfficer(true);
+        setOfficerName(name);
         return { success: true };
       }
       return { success: false, message: 'Invalid response from server' };
     } catch (err) {
       // Fallback for offline/demo if token matches default officer token
       if (inputToken === 'mangrovewatch-officer-secret-2024') {
+        const demoName = 'Field Beat Officer';
         localStorage.setItem('officer_token', inputToken);
+        localStorage.setItem('officer_name', demoName);
         setToken(inputToken);
         setIsOfficer(true);
+        setOfficerName(demoName);
         return { success: true };
       }
       return { success: false, message: err.message || 'Authentication failed' };
@@ -60,12 +67,14 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     localStorage.removeItem('officer_token');
+    localStorage.removeItem('officer_name');
     setToken('');
     setIsOfficer(false);
+    setOfficerName('');
   };
 
   return (
-    <AuthContext.Provider value={{ token, isOfficer, isLoading, login, logout }}>
+    <AuthContext.Provider value={{ token, isOfficer, officerName, isLoading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,120 +1,85 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthProvider } from './hooks/useAuth';
-import Sidebar from './components/Sidebar';
-import MapView from './components/MapView';
-import TimeLapse from './components/TimeLapse';
+import TopNav from './components/TopNav';
+import DashboardView from './components/DashboardView';
+import SatelliteView from './components/SatelliteView';
+import LegalDossiersView from './components/LegalDossiersView';
+import CommunityReportsView from './components/CommunityReportsView';
+import DossierModal from './components/DossierModal';
 import LoginModal from './components/LoginModal';
-import { Layers, MapPin, Shield, Plus, Compass } from 'lucide-react';
 
 function AppContent() {
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [layers, setLayers] = useState({
-    extent: true,
-    lossPatches: true,
-    protectedAreas: true,
-    citizenReports: true,
-    heatmap: false,
-  });
-  const [basemap, setBasemap] = useState('dark');
-  const [selectedYear, setSelectedYear] = useState(2026);
-  const [flyToCoords, setFlyToCoords] = useState(null);
-  const [droppedPin, setDroppedPin] = useState(null);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [selectedDossier, setSelectedDossier] = useState(null);
+  const [isDossierModalOpen, setIsDossierModalOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    // Persist dark mode preference
+    return localStorage.getItem('mw-dark-mode') === 'true';
+  });
 
-  // Handle map click
-  const handleMapClick = (coords) => {
-    setDroppedPin(coords);
-    setActiveTab('submit');
-  };
-
-  const handleSelectAlert = (alertItem) => {
-    // If alert item has patch coordinates or we approximate from patch
-    if (alertItem.latitude && alertItem.longitude) {
-      setFlyToCoords({ lat: alertItem.latitude, lng: alertItem.longitude });
+  // Apply or remove dark mode class on document root
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
     } else {
-      // Default to Sundarbans center
-      setFlyToCoords({ lat: 21.60, lng: 89.30 });
+      document.documentElement.classList.remove('dark');
     }
-  };
+    localStorage.setItem('mw-dark-mode', darkMode);
+  }, [darkMode]);
 
-  const handleSelectReport = (report) => {
-    if (report.latitude && report.longitude) {
-      setFlyToCoords({ lat: parseFloat(report.latitude), lng: parseFloat(report.longitude) });
-    }
-  };
-
-  const handleReportSubmitted = (result) => {
-    setDroppedPin(null);
-    // Optionally switch to reports tab to view
+  const handleOpenDossier = (dossierData) => {
+    setSelectedDossier(dossierData);
+    setIsDossierModalOpen(true);
   };
 
   return (
-    <div className="app-layout">
-      {/* Left Sidebar */}
-      <Sidebar
+    <div className={`mangrovewatch-saas-root${darkMode ? ' dark-mode' : ''}`}>
+      {/* 🧭 1. Full-Width Sticky Top Header Navigation */}
+      <TopNav
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        layers={layers}
-        setLayers={setLayers}
-        basemap={basemap}
-        setBasemap={setBasemap}
-        droppedPin={droppedPin}
-        onClearPin={() => setDroppedPin(null)}
-        onSelectAlert={handleSelectAlert}
-        onSelectReport={handleSelectReport}
-        onReportSubmitted={handleReportSubmitted}
         onRequestLogin={() => setIsLoginModalOpen(true)}
+        darkMode={darkMode}
+        onToggleDarkMode={() => setDarkMode((prev) => !prev)}
       />
 
-      {/* Main Map Canvas Area */}
-      <main className="app-main">
-        <MapView
-          layers={layers}
-          basemap={basemap}
-          selectedYear={selectedYear}
-          flyToCoords={flyToCoords}
-          onMapClick={handleMapClick}
-          droppedPin={droppedPin}
-        />
+      {/* 📐 2. Main Page Views */}
+      <main className="saas-main-viewport">
+        {activeTab === 'dashboard' && (
+          <DashboardView
+            onNavigateToSatellite={() => setActiveTab('satellite')}
+            onNavigateToLegal={() => setActiveTab('legal')}
+            onNavigateToCommunity={() => setActiveTab('community')}
+            onSelectDossier={handleOpenDossier}
+          />
+        )}
 
-        {/* Floating Quick Action Map Controls (Top Right) */}
-        <div className="map-overlay-controls">
-          <button
-            type="button"
-            className={`map-control-btn ${activeTab === 'submit' ? 'active' : ''}`}
-            onClick={() => setActiveTab('submit')}
-            title="File Eyewitness Ground Report"
-          >
-            <Compass size={18} />
-          </button>
-          <button
-            type="button"
-            className={`map-control-btn ${activeTab === 'layers' ? 'active' : ''}`}
-            onClick={() => setActiveTab('layers')}
-            title="Toggle Map Data Layers"
-          >
-            <Layers size={18} />
-          </button>
-          <button
-            type="button"
-            className="map-control-btn"
-            onClick={() => setIsLoginModalOpen(true)}
-            title="Forest Officer Authentication"
-          >
-            <Shield size={18} />
-          </button>
-        </div>
+        {activeTab === 'satellite' && (
+          <SatelliteView onSelectDossier={handleOpenDossier} />
+        )}
 
-        {/* TimeLapse Bottom Bar */}
-        <TimeLapse
-          selectedYear={selectedYear}
-          setSelectedYear={setSelectedYear}
-          minYear={2016}
-          maxYear={2026}
-        />
+        {activeTab === 'legal' && (
+          <LegalDossiersView onSelectDossier={handleOpenDossier} />
+        )}
+
+        {activeTab === 'community' && (
+          <CommunityReportsView
+            onSelectReportLocation={(coords) => {
+              setActiveTab('satellite');
+            }}
+          />
+        )}
       </main>
 
-      {/* Officer Auth Modal */}
+      {/* ⚖️ 3. Interactive Court-Admissible Dossier Modal */}
+      <DossierModal
+        dossier={selectedDossier}
+        isOpen={isDossierModalOpen}
+        onClose={() => setIsDossierModalOpen(false)}
+      />
+
+      {/* 🛡️ 4. Officer Authentication Modal */}
       <LoginModal
         isOpen={isLoginModalOpen}
         onClose={() => setIsLoginModalOpen(false)}
