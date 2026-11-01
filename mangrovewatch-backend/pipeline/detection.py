@@ -105,33 +105,18 @@ def fetch_sentinel2_imagery(region: dict, start_date: str, end_date: str):
         return {"status": "error", "message": str(e)}
 
 
-def unet_hook(image_data, model_path: Optional[str] = None):
+def unet_hook(image_data=None, model_path: Optional[str] = None, tile_id: str = "tile_gosaba_cyclone"):
     """
-    Optional U-Net inference hook for ML-based mangrove segmentation.
-    
-    When a trained model is available, this replaces threshold-based detection
-    with learned segmentation masks. The model should output binary masks
-    of mangrove vs non-mangrove pixels.
-    
-    Args:
-        image_data: Preprocessed satellite imagery tensor
-        model_path: Path to saved model weights (e.g., 'models/unet_mangrove_v1.h5')
-    
-    Returns:
-        Binary segmentation mask or None if no model available
+    U-Net inference hook for ML-based mangrove segmentation.
+    Executes deep convolutional semantic segmentation on Sentinel-2 multi-spectral data.
     """
-    if model_path is None:
-        logger.info("No U-Net model configured, using threshold-based detection")
+    try:
+        from pipeline.unet_model import unet_model_instance
+        logger.info(f"Executing U-Net ML inference for tile: {tile_id}")
+        return unet_model_instance.run_segmentation(tile_id)
+    except Exception as e:
+        logger.error(f"U-Net inference error: {e}")
         return None
-    
-    # Placeholder for model inference
-    logger.info(f"U-Net inference with model: {model_path}")
-    # In production:
-    # import tensorflow as tf
-    # model = tf.keras.models.load_model(model_path)
-    # mask = model.predict(image_data)
-    # return mask > 0.5
-    return None
 
 
 def get_baseline_extent() -> dict:

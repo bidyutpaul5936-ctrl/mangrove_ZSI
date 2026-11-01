@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 import config
-from routers import detection, reports, citizen_reports, alerts, auth
+from routers import detection, reports, citizen_reports, alerts, auth, unet_analysis
 from services.alerts import init_alerts_from_mock_data
 
 # Configure logging
@@ -73,6 +73,7 @@ app.include_router(reports.router)
 app.include_router(citizen_reports.router)
 app.include_router(alerts.router)
 app.include_router(auth.router)
+app.include_router(unet_analysis.router)
 
 
 @app.get("/health", tags=["System"])
