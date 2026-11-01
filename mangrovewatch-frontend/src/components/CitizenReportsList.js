@@ -179,10 +179,10 @@ export default function CitizenReportsList({ onSelectReport, onRequestLogin }) {
                 {isExpanded && (
                   <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid var(--glass-border)' }}>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', fontSize: '11px', color: 'var(--text-muted)', marginBottom: '8px' }}>
-                      <div>Lat: <strong>{Number(report.latitude).toFixed(4)}</strong></div>
-                      <div>Lng: <strong>{Number(report.longitude).toFixed(4)}</strong></div>
+                      <div>Lat: <strong>{Number(report.latitude ?? report.lat ?? 0).toFixed(4)}</strong></div>
+                      <div>Lng: <strong>{Number(report.longitude ?? report.lng ?? 0).toFixed(4)}</strong></div>
                       <div>Reporter: <strong>{report.reporter_name || 'Anonymous'}</strong></div>
-                      <div>Date: <strong>{new Date(report.timestamp || Date.now()).toLocaleDateString()}</strong></div>
+                      <div>Date: <strong>{new Date(report.timestamp || report.created_at || Date.now()).toLocaleDateString()}</strong></div>
                     </div>
 
                     {report.photo_url && (

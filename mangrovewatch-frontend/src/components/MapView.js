@@ -37,8 +37,14 @@ function MapController({ flyToCoords, onMapClick }) {
   const map = useMap();
 
   useEffect(() => {
-    if (flyToCoords) {
-      map.flyTo([flyToCoords.lat, flyToCoords.lng], 13, {
+    if (
+      flyToCoords &&
+      flyToCoords.lat != null &&
+      flyToCoords.lng != null &&
+      !isNaN(Number(flyToCoords.lat)) &&
+      !isNaN(Number(flyToCoords.lng))
+    ) {
+      map.flyTo([Number(flyToCoords.lat), Number(flyToCoords.lng)], 13, {
         duration: 1.5,
       });
     }
@@ -330,41 +336,49 @@ export default function MapView({
         )}
 
         {/* 5. Citizen Reports Markers */}
-        {layers.citizenReports && citizenReports.map((report) => (
-          <Marker
-            key={report.report_id}
-            position={[report.latitude, report.longitude]}
-            icon={createCitizenIcon(report.status)}
-          >
-            <Popup>
-              <div style="font-family: 'Inter', sans-serif; min-width: 220px; color: #0A0F0D;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                  <strong style="font-size: 13px;">Ground Report</strong>
-                  <span style="font-size: 10px; font-weight: 700; text-transform: uppercase;">${report.status}</span>
-                </div>
-                <div style="font-size: 11px; color: #555; margin-bottom: 4px;">
-                  Category: <strong>${(report.category || '').replace(/_/g, ' ')}</strong>
-                </div>
-                <div style="font-size: 12px; margin-bottom: 6px;">
-                  ${report.description}
-                </div>
-                ${report.linked_patch_id ? `
-                  <div style="font-size: 11px; color: #00796B; font-weight: 600; padding: 4px; background: #E0F2F1; border-radius: 4px; margin-bottom: 6px;">
-                    🔗 Auto-linked to Satellite Patch: ${report.linked_patch_id}
+        {layers.citizenReports && citizenReports.map((report, idx) => {
+          const lat = report.latitude ?? report.lat;
+          const lng = report.longitude ?? report.lng;
+          if (lat == null || lng == null || isNaN(Number(lat)) || isNaN(Number(lng))) {
+            return null;
+          }
+          const reportId = report.report_id || report.id || `cr-${idx}`;
+          return (
+            <Marker
+              key={reportId}
+              position={[Number(lat), Number(lng)]}
+              icon={createCitizenIcon(report.status)}
+            >
+              <Popup>
+                <div style={{ fontFamily: "'Inter', sans-serif", minWidth: '220px', color: '#0A0F0D' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                    <strong style={{ fontSize: '13px' }}>Ground Report</strong>
+                    <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' }}>{report.status || 'REPORT'}</span>
                   </div>
-                ` : ''}
-                ${report.photo_url ? `
-                  <img src="${report.photo_url}" style="width: 100%; height: 90px; object-fit: cover; border-radius: 4px; margin-top: 4px;" />
-                ` : ''}
-              </div>
-            </Popup>
-          </Marker>
-        ))}
+                  <div style={{ fontSize: '11px', color: '#555', marginBottom: '4px' }}>
+                    Category: <strong>{(report.category || '').replace(/_/g, ' ')}</strong>
+                  </div>
+                  <div style={{ fontSize: '12px', marginBottom: '6px' }}>
+                    {report.description}
+                  </div>
+                  {report.linked_patch_id && (
+                    <div style={{ fontSize: '11px', color: '#00796B', fontWeight: 600, padding: '4px', background: '#E0F2F1', borderRadius: '4px', marginBottom: '6px' }}>
+                      🔗 Auto-linked to Satellite Patch: {report.linked_patch_id}
+                    </div>
+                  )}
+                  {report.photo_url && (
+                    <img src={report.photo_url} alt="Field Report" style={{ width: '100%', height: '90px', objectFit: 'cover', borderRadius: '4px', marginTop: '4px' }} />
+                  )}
+                </div>
+              </Popup>
+            </Marker>
+          );
+        })}
 
         {/* 6. Dropped Pin for New Report Submission */}
-        {droppedPin && (
+        {droppedPin && droppedPin.lat != null && droppedPin.lng != null && !isNaN(Number(droppedPin.lat)) && !isNaN(Number(droppedPin.lng)) && (
           <Marker
-            position={[droppedPin.lat, droppedPin.lng]}
+            position={[Number(droppedPin.lat), Number(droppedPin.lng)]}
             icon={L.divIcon({
               className: 'dropped-pin',
               html: `
